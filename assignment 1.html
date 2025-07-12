@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Countdown App</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; margin-bottom: 5px; }
+    input, textarea, select { width: 100%; padding: 8px; }
+    #eventList .card { background: white; margin-bottom: 10px; padding: 10px; border-left: 5px solid #333; }
+    .card.meeting { border-color: #0074D9; }
+    .card.birthday { border-color: #FF4136; }
+    .card.holiday { border-color: #2ECC40; }
+    .card.custom { border-color: #FF851B; }
+    .card-buttons { margin-top: 10px; }
+    button { margin-right: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic Event Countdown</h2>
+
+  <form id="eventForm">
+    <div class="form-group">
+      <label>Event Title *</label>
+      <input type="text" id="title" required />
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Date & Time *</label>
+      <input type="datetime-local" id="dateTime" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email for Reminder</label>
+      <input type="email" id="email" />
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select id="category">
+        <option value="birthday">Birthday</option>
+        <option value="meeting">Meeting</option>
+        <option value="holiday">Holiday</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Event</button>
+  </form>
+
+  <hr/>
+
+  <div id="eventList"></div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
